@@ -1,0 +1,8 @@
+services:
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin:latest
+    environment:
+      - PMA_HOST=${PMA_HOST}
+    ports:
+      - 5052:80
