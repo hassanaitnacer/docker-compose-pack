@@ -8,7 +8,7 @@ Take a look at the [.env](.env) file and configure it according to your needs or
 
 - POSTGRES_PW
 
-## Authentication
+## Connection
 
 | Option   | Environment Variable | Default Value |
 | -------- | -------------------- | ------------- |

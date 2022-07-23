@@ -9,7 +9,7 @@ Take a look at the [.env](.env) file and configure it according to your needs or
 - MONGO_INITDB_ROOT_USERNAME
 - MONGO_INITDB_ROOT_PASSWORD
 
-## Authentication
+## Connection
 
 | Option   | Environment Variable       | Default Value |
 | -------- | -------------------------- | ------------- |
