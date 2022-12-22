@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data:/prometheus
+    ports:
+      - 9090:9090
+
+  node_exporter:
+    image: prom/node-exporter
+    container_name: node_exporter
+    volumes:
+      - /:/host:ro
+    command:
+      - --path.rootfs=/host
+      - --collector.filesystem.ignored-mount-points="^/(sys|proc|dev|host|etc)($|/)"
+    ports:
+      - 9100:9100
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ./grafana:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - 3000:3000
